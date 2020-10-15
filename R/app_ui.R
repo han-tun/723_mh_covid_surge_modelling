@@ -20,6 +20,11 @@ app_ui <- function(request) {
       dashboardSidebar(
         sidebarMenu(
           menuItem(
+            "Setup",
+            tabName = "setup",
+            icon = icon("wrench")
+          ),
+          menuItem(
             "Parameters",
             tabName = "params",
             icon = icon("dashboard"),
@@ -63,6 +68,7 @@ app_ui <- function(request) {
       ),
       dashboardBody(
         tabItems(
+          tabItem("setup", setup_ui("setup_page")),
           tabItem("params", params_ui("params_page")),
           tabItem("demand", demand_ui("demand_page")),
           tabItem("results", results_ui("results_page")),
